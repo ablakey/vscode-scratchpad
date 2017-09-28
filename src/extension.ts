@@ -4,14 +4,26 @@ import * as fs from 'fs';
 import * as path from 'path';
 import {EOL} from 'os';
 
-const fileName = 'scratchpad.txt';
+const fileBase = 'scratchpad';
+const fileExtension = '.md'
 let fullPath = '';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let disposable = vscode.commands.registerCommand('extension.openScratchpad', () => {
+    let globalCommand = vscode.commands.registerCommand('extension.openGlobalScratchpad', () => {
+        fullPath = path.join(context.extensionPath, fileBase + '_global' + fileExtension);
+        openFile(fullPath); 
+    });
+    let localCommand = vscode.commands.registerCommand('extension.openLocalScratchpad', () => {
+        const { rootPath } = vscode.workspace;
+        fullPath = path.join(rootPath, ".vscode",  fileBase + '_local' + fileExtension);
+        openFile(fullPath);
+    });
 
-        fullPath = path.join(context.extensionPath, fileName);
+    context.subscriptions.push(localCommand);
+    context.subscriptions.push(globalCommand);
+}
+export function openFile (fullPath: string) {
         if (!fs.existsSync(fullPath)) {
             fs.writeFileSync(fullPath, '');
         }
@@ -26,9 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
                 });
             });
         });
-    });
 
-    context.subscriptions.push(disposable);
 }
 
 export function deactivate() {
@@ -37,8 +47,9 @@ export function deactivate() {
 function newLine(firstLine = false) {
     const now = new Date();
     return (firstLine ? '' : EOL)
-        + '----------'
+        + '# '
         + now.toJSON().slice(0, 10) + ' '
         + now.toLocaleTimeString('fullwise', {hour12: false})
-        + '----------' + EOL;
+        + EOL
+        + EOL;
 }

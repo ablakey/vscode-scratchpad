@@ -2,18 +2,21 @@
 
 Simple Scratchpad for quick notes.
 
+Notes are created as markdown files. Notes can either be created in the local project folder or the global extensions folder. 
+
 # Usage
-1. Install this plugin :)
-2. Press F1, search for "Scratchpad"
-3. Add key bindings (Optional) .
-    - Open key bindings settings file:
-        + Open Command Palette (Ctrl+P)
-        + Search for 'Open keyboard shortcuts'
-    - Add and save you key bindings. For example:
+1. Install plugin
+2. Press F1, search for "Scratchpad Markdown"
+3. Add Keybindings
+
 ```
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "ctrl+shift+.",   "command": "extension.openScratchpad", "when": "editorTextFocus" }
+    { "key": "ctrl+k ctrl+s",   "command": "extension.openGlobalScratchpad", "when": "editorTextFocus" }
+    { "key": "ctrl+k s",        "command": "extension.openLocalScratchpad", "when": "editorTextFocus" }
 ]
 ```
-4. Enjoy! :)
+
+
+This code is forked from https://github.com/awesomektvn/vscode-scratchpad 
+

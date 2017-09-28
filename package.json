@@ -1,9 +1,9 @@
 {
-    "name": "scratchpad",
-    "displayName": "Scratchpad",
-    "description": "a simple scratchpad for vscode",
+    "name": "scratchpadmd",
+    "displayName": "Scratchpad Markdown",
+    "description": "a simple scratchpad for vscode (using markdown)",
     "version": "0.0.1",
-    "publisher": "awesomektvn",
+    "publisher": "saahilclaypool",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -11,14 +11,21 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.openScratchpad"
+        "onCommand:extension.openGlobalScratchpad",
+        "onCommand:extension.openLocalScratchpad"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.openScratchpad",
-            "title": "Open Scratchpad"
-        }]
+        "commands": [
+            {
+                "command": "extension.openGlobalScratchpad",
+                "title": "Open Global Scratchpad"
+            },
+            {
+                "command": "extension.openLocalScratchpad",
+                "title": "Open Local Scratchpad"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
