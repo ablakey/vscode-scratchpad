@@ -12,7 +12,7 @@ Notes are created as markdown files. Notes can either be created in the local pr
 ```
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "ctrl+k ctrl+s",   "command": "extension.openGlobalScratchpad", "when": "editorTextFocus" }
+    { "key": "ctrl+k ctrl+s",   "command": "extension.openGlobalScratchpad", "when": "editorTextFocus" },
     { "key": "ctrl+k s",        "command": "extension.openLocalScratchpad", "when": "editorTextFocus" }
 ]
 ```
