@@ -31,11 +31,15 @@ export function openFile (fullPath: string) {
         vscode.workspace.openTextDocument(fullPath).then((doc) => {
             vscode.window.showTextDocument(doc).then(editor => {
                 const length = doc.getText().length;
-                const pos = editor.document.positionAt(length);
+                // const pos = editor.document.positionAt(length);
+                const pos = editor.document.positionAt(0);
                 editor.selection = new vscode.Selection(pos, pos);
                 editor.edit(e => {
-                    e.insert(pos, newLine(length === 0));
+                    e.insert(pos , newLine(true));
+                    e.insert(pos , "\n\n");
                 });
+                let newPosition = new vscode.Position(2, 0); 
+                editor.selections = [new vscode.Selection(newPosition, newPosition)]
             });
         });
 
