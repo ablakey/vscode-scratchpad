@@ -11,7 +11,8 @@ let fullPath = '';
 export function activate(context: vscode.ExtensionContext) {
 
     let globalCommand = vscode.commands.registerCommand('extension.openGlobalScratchpad', () => {
-        fullPath = path.join(context.extensionPath, fileBase + '_global' + fileExtension);
+        fullPath = path.join(context.extensionPath, "../..", fileBase + '_global' + fileExtension);
+
         openFile(fullPath); 
     });
     let localCommand = vscode.commands.registerCommand('extension.openLocalScratchpad', () => {

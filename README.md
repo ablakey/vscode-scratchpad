@@ -1,8 +1,9 @@
-# Scratchpad README
+# Scratchpad MD
 
 Simple Scratchpad for quick notes.
 
 Notes are created as markdown files. Notes can either be created in the local project folder or the global extensions folder. 
+
 
 # Usage
 1. Install plugin
@@ -20,3 +21,12 @@ Notes are created as markdown files. Notes can either be created in the local pr
 
 This code is forked from https://github.com/awesomektvn/vscode-scratchpad 
 
+# Changelog 
+
+## v0.0.2
+- Now the cursor & newline are placed at the top of the file
+
+## v0.0.3
+- Global now stored in ~/.vscode
+
+# Publishing
