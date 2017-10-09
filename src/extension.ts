@@ -41,8 +41,9 @@ export function openFile (fullPath: string) {
                 });
                 let newPosition = new vscode.Position(2, 0); 
                 editor.selections = [new vscode.Selection(newPosition, newPosition)]
-            });
-        });
+            }, (err) => console.error(err));
+        }, (err) => console.error(err)
+        );
 
 }
 
