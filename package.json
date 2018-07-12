@@ -1,9 +1,9 @@
 {
-    "name": "scratchpadmd",
-    "displayName": "Scratchpad Markdown",
-    "description": "a simple scratchpad for vscode (using markdown)",
+    "name": "scratchpadmdnodate",
+    "displayName": "Scratchpad Markdown No Date",
+    "description": "a simple scratchpad for vscode (using markdown and without dates)",
     "version": "0.0.3",
-    "publisher": "saahilclaypool",
+    "publisher": "ablakey",
     "engines": {
         "vscode": "^1.0.0"
     },
