@@ -51,11 +51,5 @@ export function deactivate() {
 }
 
 function newLine(firstLine = false) {
-    const now = new Date();
-    return (firstLine ? '' : EOL)
-        + '# '
-        + now.toJSON().slice(0, 10) + ' '
-        + now.toLocaleTimeString('fullwise', {hour12: false})
-        + EOL
-        + EOL;
+    return EOL;
 }
